@@ -1,0 +1,12 @@
+<template name="urls">
+    <div>
+        <input type="text" id="url-input" placeholder="url..." style="width: 500px;" />
+    </div>
+    <div>
+        <ul>
+            {{#each items}}
+                <li>{{url}}</li>
+            {{/each}}
+        </ul>
+    </div>
+</template>

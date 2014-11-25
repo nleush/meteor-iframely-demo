@@ -1,0 +1,1 @@
+Urls = new Mongo.Collection("urls");
