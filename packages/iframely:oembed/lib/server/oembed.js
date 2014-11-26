@@ -1,10 +1,6 @@
 Meteor.methods({
 
-    testCall: function() {
-        return 'ok';
-    },
-
-    getOembed: function(url) {
+    "iframely.oembed": function(url) {
 
         check(url, String);
 

@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'itteco:iframely',
+  name: 'iframely:oembed',
   summary: ' /* Fill me in! */ ',
   version: '0.0.1',
   git: ' /* Fill me in! */ '
@@ -11,9 +11,9 @@ Package.onUse(function(api) {
 
   api.use('templating');
 
-  api.addFiles('lib/client/embed.html', 'client');
-  api.addFiles('lib/client/embed.js', 'client');
+  api.addFiles('lib/client/oembed.html', 'client');
+  api.addFiles('lib/client/oembed.js', 'client');
 
-  api.addFiles('lib/server/embed.js', 'server');
+  api.addFiles('lib/server/oembed.js', 'server');
 
 });

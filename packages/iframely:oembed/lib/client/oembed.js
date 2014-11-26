@@ -1,6 +1,8 @@
+var key = 'iframely:oembed:url:';
+
 var loadOembed = function(url) {
 
-    var oembed = Session.get('url:' + url);
+    var oembed = Session.get(key + url);
 
     // Start load if not loaded.
     if (!oembed) {
@@ -8,26 +10,26 @@ var loadOembed = function(url) {
         // Set loading to prevent another load.
         Session.set('url:' + url, {loading: true});
 
-        Meteor.call('getOembed', url, function(error, data) {
+        Meteor.call('iframely.oembed', url, function(error, data) {
 
             if (error) {
-                Session.set('url:' + url, {error: error});
+                Session.set(key + url, {error: error});
                 return;
             }
 
-            Session.set('url:' + url, data);
+            Session.set(key + url, data);
         });
     }
 
     return oembed;
 };
 
-Template.embed.rendered = function() {
+Template.oembed.rendered = function() {
     // Need call here, because Meteor.call not work during item.insert called from helper.
     loadOembed(this.data.url);
 };
 
-Template.embed.helpers({
+Template.oembed.helpers({
 
     'html': function() {
 

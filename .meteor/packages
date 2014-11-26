@@ -7,5 +7,5 @@ meteor-platform
 autopublish
 insecure
 http
-itteco:iframely
+iframely:oembed
 
