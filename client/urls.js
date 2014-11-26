@@ -1,3 +1,5 @@
+Urls = new Mongo.Collection("urls");
+
 var urlRe = /^\s*(https?:\/\/[^ \/,"]+\/[^ ,"]+)\s*$/i;
 
 Template.urls.helpers({
@@ -17,10 +19,28 @@ Template.urls.events({
             var value = String(e.target.value || "");
             if (value && value.match(urlRe)) {
                 e.target.value = '';
-                Urls.insert({
-                    created_at: new Date(),
-                    url: value
+/*
+                var last = Urls.findOne({}, {
+                    sort: {
+                        created_at: -1,
+                        limit: 1
+                    }
                 });
+
+                if (last) {
+                    Urls.update(last._id, {
+                        $set: {
+                            url: value
+                        }
+                    })
+                } else {*/
+                    Urls.insert({
+                        created_at: new Date(),
+                        url: value
+                    });
+                /*
+                }
+                */
             }
         }
     }

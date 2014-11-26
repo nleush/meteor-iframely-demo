@@ -2,10 +2,17 @@
     <div>
         <input type="text" id="url-input" placeholder="url..." style="width: 500px;" />
     </div>
-    <div>
+    <div style="width: 300px;">
         <ul>
             {{#each items}}
-                <li>{{url}}</li>
+                <li>
+                    <div>
+                        <strong>{{url}}</strong>
+                    </div>
+                    <div>
+                        {{>embed}}
+                    </div>
+                </li>
             {{/each}}
         </ul>
     </div>
