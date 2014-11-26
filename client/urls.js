@@ -1,6 +1,6 @@
 Urls = new Mongo.Collection("urls");
 
-var urlRe = /^\s*(https?:\/\/[^ \/,"]+\/[^ ,"]+)\s*$/i;
+var urlRe = /^https?:\/\/[^ \/,"]+\/[^ ,"]+$/i;
 
 Template.urls.helpers({
     items: function () {
