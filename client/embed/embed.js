@@ -1,10 +1,12 @@
-Template.embed.rendered = function() {
+var loadOembed = function(url) {
 
-    var data = this.data;
+    var oembed = Session.get('url:' + url);
 
-    Deps.autorun(function() {
+    // Start load if not loaded.
+    if (!oembed) {
 
-        var url = data.url;
+        // Set loading to prevent another load.
+        Session.set('url:' + url, {loading: true});
 
         Meteor.call('getOembed', url, function(error, data) {
 
@@ -15,16 +17,23 @@ Template.embed.rendered = function() {
 
             Session.set('url:' + url, data);
         });
-    });
+    }
+
+    return oembed;
+};
+
+Template.embed.rendered = function() {
+    // Need call here, because Meteor.call not work during item.insert called from helper.
+    loadOembed(this.data.url);
 };
 
 Template.embed.helpers({
 
     'html': function() {
 
-        var oembed = Session.get('url:' + this.url);
+        var oembed = loadOembed(this.url);
 
-        if (!oembed) {
+        if (!oembed || oembed.loading) {
             return 'loading...';
         }
 

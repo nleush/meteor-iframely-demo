@@ -19,6 +19,13 @@ Template.urls.events({
             var value = String(e.target.value || "");
             if (value && value.match(urlRe)) {
                 e.target.value = '';
+
+                Urls.insert({
+                    created_at: new Date(),
+                    url: value
+                });
+
+                // Test replace.
 /*
                 var last = Urls.findOne({}, {
                     sort: {
@@ -33,14 +40,13 @@ Template.urls.events({
                             url: value
                         }
                     })
-                } else {*/
+                } else {
                     Urls.insert({
                         created_at: new Date(),
                         url: value
                     });
-                /*
                 }
-                */
+*/
             }
         }
     }
