@@ -1,19 +1,14 @@
 <template name="urls">
-    <div>
-        <input type="text" id="url-input" placeholder="url..." style="width: 500px;" />
-    </div>
-    <div style="width: 500px;">
-        <ul>
-            {{#each items}}
-                <li>
-                    <div>
-                        <strong>{{url}}</strong>
-                    </div>
-                    <div>
-                        {{>oembed}}
-                    </div>
-                </li>
-            {{/each}}
-        </ul>
-    </div>
+    <p>
+        <input type="text" id="url-input" placeholder="paste url and hit enter..." style="width: 100%;" />
+    </p>
+    {{#each items}}
+        <hr>
+        <p>
+            <strong><a href="{{url}}" target="_blank">{{url}}</a></strong>
+        </p>
+        <p>
+            {{>oembed}}
+        </p>
+    {{/each}}
 </template>

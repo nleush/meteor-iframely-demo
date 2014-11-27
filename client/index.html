@@ -1,9 +1,69 @@
 <head>
-    <title>meteor-iframely-demo</title>
-</head>
+    <title>Meteor: Iframely Oembed</title>
 
+    <link rel="shortcut icon" href="//d3mjzoazuwwms3.cloudfront.net/r5/v19/img/favicon.ico" />
+
+    <script type="text/javascript" src="//use.typekit.net/aku1try.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <link href="//d3mjzoazuwwms3.cloudfront.net/r5/v19/css/style-iframely.min.css" rel="stylesheet" media="screen">
+
+</head>
 <body>
 
-{{> urls}}
+<header class="header">
+    <div class="container header__container">
+
+        <h1>
+            <a href="/" class="header-logo">
+                Iframel<span class="header-logo__y">y</span>
+            </a>
+        </h1>
+
+    </div>
+</header><!--/.header-->
+
+<div class="content">
+    <div class="container">
+
+        <div class="layout">
+            <div class="layout__main">
+
+                <div class="typo">
+                    <h1>iframely:oembed demo</h1>
+
+                    {{> urls}}
+                </div>
+
+            </div><!--/.main-->
+            <div class="layout__sidebar">
+
+
+            </div><!--/.sidebar-->
+
+        </div><!--/.row-->
+
+    </div>
+
+</div><!--/.content-->
+
+
+<script type="text/javascript" defer="defer">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-29223392-4']);
+
+    _gaq.push(['_setDomainName', 'iframely.com']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+    _gaq.push(['_trackPageLoadTime']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
 
 </body>

@@ -1,13 +1,16 @@
 <template name="customWidget">
+    {{#if error}}
+        <div>
+            Error: {{error}}
+        </div>
+    {{/if}}
     {{#if html}}
         <div class="iframely-oembed">
-            [Custom]
             {{{html}}}
         </div>
     {{else}}
         {{#if title}}
             <div class="iframely-oembed">
-                [Custom]
                 <div class="iframely-link">
                     <a href="{{url}}" target="_blank">
                         {{#if thumbnail_url}}
