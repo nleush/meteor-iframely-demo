@@ -46,7 +46,8 @@ Template.urls.events({
                         url: value
                     });
                 }
-*/
+                */
+
             }
         }
     }
