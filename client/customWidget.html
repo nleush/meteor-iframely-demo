@@ -6,6 +6,7 @@
     {{/if}}
     {{#if html}}
         <div class="iframely-oembed">
+            {{#if title}}<h3>{{title}}</h3>{{/if}}
             {{{html}}}
         </div>
     {{else}}
